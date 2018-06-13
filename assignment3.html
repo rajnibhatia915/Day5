@@ -1,0 +1,148 @@
+<html>
+<script type="text/javascript">
+        var arr=[2,6,2,9,0];
+		var len=arr.length;
+		for(var i=0;i<len;i++)
+		{
+        console.log(arr[i]);
+		}
+	console.log("enter 1 for Push()");
+	console.log("enter 2 for Pop()");
+	console.log("enter 3 for Sort()");
+	console.log("enter 4 for Reverse()");
+	console.log("enter 5 for indexOf()");
+	console.log("enter 6 for Includes()");
+
+
+	var choice=prompt("enter your choice");
+	switch(choice)
+	{
+		case '1':var item=prompt("enter number to push");
+	push(arr,len,item);
+		break;
+		case '2':pop(arr,len,item);
+		break;
+		case '3':sortArray(arr,len);
+		break;
+        case '4':reverseArray(arr,len);
+        break;
+        case '5':var item=prompt("enter element");
+        var ret=indexOfFunc(arr,len,item);
+        console.log(ret);
+        
+            break;
+            case '6':var item=prompt("enter element");
+           var ret=includesFunc(arr,len,item);
+           console.log(ret);
+        
+            break;
+            default:console.log("invalid input");
+        
+    }
+    function push(arr,len,item)
+    {
+
+		console.log("before push array is");
+		for(var i=0;i<len;i++)
+		{
+        console.log(arr[i]);
+		}
+
+		arr[len]=item;
+		console.log("after push array is");
+        for(var i=0;i<len+1;i++)
+		{
+            console.log(arr[i]);
+        }
+    }
+    function pop(arr,len)
+    {
+    	console.log("before Pop array is");
+		for(var i=0;i<len;i++)
+		{
+         console.log(arr[i]);
+		}
+		var temp=arr[len-1];
+		console.log("after Pop array is");
+		console.log("deleted element is"+temp);
+        for(var i=0;i<len-1;i++)
+		{
+           console.log(arr[i]);
+        }
+    }
+    function sortArray(arr,len)
+    {
+    	var temp;
+     console.log("Before sorting array is");
+		for(var i=0;i<len;i++)
+		{
+        console.log(arr[i]);
+		}
+		
+		for(var i=0;i<len;i++)
+		{
+			for(var j=0;j<len;j++)
+			{
+				if(arr[j]>arr[j+1])
+			{
+				var temp=arr[j];
+				arr[j]=arr[j+1];
+				arr[j+1]=temp;
+			}
+			}
+			
+		}
+		console.log("After sorting array is");
+		for(var i=0;i<len;i++)
+		{
+
+            console.log(arr[i]);
+        }
+    }
+    function reverseArray(arr,len)
+    {
+    	console.log("Before reverse array is");
+		for(var i=0;i<len;i++)
+		{
+          console.log(arr[i]);
+		}
+		console.log("After reverse array is");
+		{
+			for(var i=len-1;i>=0;i--)
+			{
+				console.log(arr[i]);
+			}
+		}
+    }
+    function indexOfFunc(arr,len,item)
+    {
+    	
+        for(var i=0;i<len;i++)
+	    {
+		    if(arr[i]==item)
+		   {
+			return i;
+			break;
+		   }
+	    }
+	    return -1;
+	  
+    }
+ 
+function includesFunc(arr,len,item)
+{
+
+            for(var i=0;i<len;i++)
+            {
+            	if(arr[i]==item)
+            	{
+            		return 'true';
+            		break;
+            	}
+            }
+             return 'false';
+}
+
+		
+	</script>
+</html>
